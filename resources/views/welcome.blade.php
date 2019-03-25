@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    FAN STORIES WEBSITE
                 </div>
 
                 <div class="links">
