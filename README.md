@@ -1,6 +1,4 @@
-# dotravel
-ESTEBAN WEBPAGE
-# table
+# FAN WEB STORIES
 CREATE TABLE `estabanos`.`story` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `person` VARCHAR(45) NULL,
