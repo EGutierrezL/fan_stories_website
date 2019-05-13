@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>FAN STORIES WEBSITE</title>
 
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="/css/stories.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -155,61 +155,39 @@
     <body>
 
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        <nav  class="navbar navbar-expand-lg navbar-light bg-dark">
-  <ul class="navbar-nav mr-auto">
-    <li> <a href="#">INICI</a> </li>
-  </ul>
-  <ul class="navbar-nav mr-auto">
-    <li> <a href="#">B</a> </li>
-  </ul>
-  <ul class="navbar-nav mr-auto">
-    <li> <a href="#">C</a> </li>
-  </ul>
-  <ul class="navbar-nav mr-auto">
-    <li> <a href="#">D</a> </li>
-  </ul>
-  
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="index.php?action=registreUsuaris">Registre</button>
-            
-       </nav>
-      
-      <ul id="menu">
-      	<li data-menuanchor="firstPage"><a href=href="#"></a></li>
-      	<li data-menuanchor="secondPage"><a href="#"></a></li>
-      	<li data-menuanchor="thirdPage"><a href="#"></a></li>
-      </ul>
 
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        @extends('layouts.app')
+        @section('content')
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
+            <div class="flex-center position-ref full-height">
+                <div class="content">
                   <div class="title m-b-md"> FAN STORIES WEBSITE </div> 
-                   <div class="brand">
+                  <div class="brand">
                     <a href="./">My Company</a>
-                   </div>
+                  </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                 <div class="links">
+                  <a href="/addstory">Add Story</a>
+                  <a href="/showstories/1">Show Stories</a>
+                 </div>
                 </div>
             </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-8 mx-auto">
+              
+              <div class="card border=0 bg-light"></div>
+              <form action="{{route('statuses.store')}}" method="POST">
+        @csrf
+                <div class="card-body"><textarea class="form-control border=0 bg-light" name="body" placeholder="What do you mean?"></textarea></div>
+                <div class="card-footer">
+                <button class="btn btn-primary" id="create-status">Coments and email questions</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+        @endsection('content')
         </body>
 </html>
