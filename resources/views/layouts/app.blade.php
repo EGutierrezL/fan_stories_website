@@ -29,19 +29,16 @@
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
-
-<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-  
+  <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
   <a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-cloud"></i><b> FAN </b></a>
-   
-  <ul class="navbar-nav mr-auto"> <li class="nav-item active"><div class="p-2"><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" href="#">Inici</button></div></li>
-  <li class="nav-item active"><div class="p-2"><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" href="#">General</button></div></li>
-  <li class="nav-item active"><div class="p-2"><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" href="#">Noticies</button></div></li>
-  <li class="nav-item active"><div class="p-2"><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" href="#">Videojocs</button></div></li>
-  <li class="nav-item active"><div class="p-2"><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" href="#">Esports</button></div></li>
-  <li class="nav-item active"><div class="p-2"><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal" href="#">Comunitat</button></div></li></ul>
-
-</div>
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item"><div class="p-2"><button class="btn"><b><a class="{{ setActive('presentation') }}" href="{{ route('presentation') }}">Presentation</a></b></button></div></li>
+  <li class="nav-item"><div class="p-2"><button class="btn btn-info {{ setActive('News') }}" data-toggle="modal" href="#">News</button></div></li>
+  <li class="nav-item"><div class="p-2"><button class="btn btn-info {{ setActive('Games') }}" data-toggle="modal" href="#">Games</button></div></li>
+  <li class="nav-item"><div class="p-2"><button class="btn btn-info {{ setActive('Sports') }}" data-toggle="modal" href="#">Sports</button></div></li>
+  <li class="nav-item"><div class="p-2"><button class="btn btn-info {{ setActive('Community') }}" data-toggle="modal" href="#">Community</button></div></li>
+</ul>
+  </div>
 </div>
 </nav>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -75,7 +72,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/home') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">

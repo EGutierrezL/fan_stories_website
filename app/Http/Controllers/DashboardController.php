@@ -15,4 +15,13 @@ class DashboardController extends Controller
     {
         return view('contacts');
     }
+    //metode de missatges
+   public function store(Request $request)
+    {
+        return $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'all_content' => 'required|min:1|max:140'
+        ]);
+    }
 }
